@@ -1,0 +1,10 @@
+{
+  "name": "pizza-delivery-backend",
+  "version": "1.0.0",
+  "description": "This repository is for a practicing making server using Express.js",
+  "main": "index.js",
+  "repository": "https://github.com/ccx-projects/pizza-delivery-backend.git",
+  "author": "NaoArimura <naoyosetani@gmail.com>",
+  "license": "MIT",
+  "private": false
+}
