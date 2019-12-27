@@ -33,4 +33,6 @@ project/
   .gitignore
   app.js
   package.json
+  .eslintrc
+  .prettirerc
 ```
