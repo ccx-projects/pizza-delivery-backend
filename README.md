@@ -1,6 +1,12 @@
 ## This repository is for a practicing making server using Node.js and Express.js
 
 
+## What is Express?
+
+[Express](http://expressjs.com/) is a framework of Node.js.
+
+
+
 ## STEPS 
 1: make new repositroy
 
@@ -13,7 +19,7 @@
 
 
 ## Express Archtecture
-
+```
 project/
   controllers/
     index.js
@@ -27,3 +33,4 @@ project/
   .gitignore
   app.js
   package.json
+```
