@@ -6,5 +6,9 @@
   "repository": "https://github.com/ccx-projects/pizza-delivery-backend.git",
   "author": "NaoArimura <naoyosetani@gmail.com>",
   "license": "MIT",
-  "private": false
+  "private": false,
+  "devDependencies": {
+    "eslint-config-prettier": "^6.8.0",
+    "eslint-plugin-prettier": "^3.1.2"
+  }
 }
