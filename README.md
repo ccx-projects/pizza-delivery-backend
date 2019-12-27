@@ -18,7 +18,7 @@
 
 
 
-## Express Archtecture
+## Express Architecture
 ```
 project/
   controllers/
