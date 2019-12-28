@@ -10,21 +10,32 @@ JavaScript, Express.js, Node.js, PostgreSQL
 
 
 
-## STEPS 
-1: make new repositroy
+## Usage
+1: Make new repositroy
 
 2: ```yarn init```  to create package.json
 
-3: add .gitignore file. I used an extension.
+3: Add .gitignore file. I used an extension.
 
 <img width="583" alt="Screen Shot 2019-12-27 at 18 09 29" src="https://user-images.githubusercontent.com/45124890/71510991-16dd4880-28d4-11ea-97f9-cc080072727b.png">
 
-4: create database.json for using migration 
+4: Create database.json for using migration manually.
+   
+5: Create database.
+ 
+ ```db-migrate db:create <your database name> -e dev```
 
-5: 'create database <database_name>' in terminal using postgreSQL. 
+You might need to install 'db-migrate' command globally.
 
-6: create table using migration file.
-added two packages pg, db-migrate-pg
+```yarn global add db-migrate```
+
+
+6: Create migration file.
+``` db-migrate creat <your table name>```
+
+Migrations folder and file will create automatically!
+
+
 
 
 ## Express Architecture
