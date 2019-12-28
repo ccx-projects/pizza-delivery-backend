@@ -36,3 +36,17 @@ project/
   .eslintrc
   .prettirerc
 ```
+
+
+## HTTP Request
+
+```
+GET /pizzas
+GET /pizzas/:id
+
+POST /pizzas
+
+PATCH /pizzas/:id
+
+DELETE /pizzas/:id
+```
