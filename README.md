@@ -38,7 +38,8 @@ Migrations folder and file will create automatically!
 7: Create table using the migration file.
 Modified the createTable method in migration file like below.
 
-``` exports.up = function(db) {
+``` 
+exports.up = function(db) {
   return db.createTable("pizzas", {
     id: { type: "int", primaryKey: true },
     name: "string",

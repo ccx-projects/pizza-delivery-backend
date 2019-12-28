@@ -7,12 +7,12 @@ exports.up = function(db) {
     created_at: {
       type: "timestamp",
       notNull: true,
-      defaultValue: new String("CURRENT_TIMESTAMP"),
+      defaultValue: new String("CURRENT_TIMESTAMP")
     },
     updated_at: {
       type: "timestamp",
       notNull: true,
-      defaultValue: new String("CURRENT_TIMESTAMP"),
+      defaultValue: new String("CURRENT_TIMESTAMP")
     },
   });
 };
