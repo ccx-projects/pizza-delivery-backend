@@ -36,7 +36,7 @@ You might need to install 'db-migrate' command globally.
 Migrations folder and file will create automatically!
 
 7: Create table using the migration file.
-Modified the function in migration file like below.
+Modified the createTable method in migration file like below.
 
 ``` exports.up = function(db) {
   return db.createTable("pizzas", {
@@ -60,6 +60,30 @@ Modified the function in migration file like below.
 
 Then, run this command in your terminal.
 ``` db-migrate up ```
+
+You can see the table in your database!
+
+Modified the dropTable method in migration file like below.
+
+```
+exports.down = function(db) {
+  return db.dropTable("pizzas");
+};
+```
+
+Then, run this command in your terminal.
+``` db-migrate down ```
+
+You will be able to delete the table in your database.
+
+
+When you modify the table later, you need to 
+```db-migrate down```
+first, then modified inside the createTable method.
+
+Then run
+``` db-migrate up ```
+
 
 
 
