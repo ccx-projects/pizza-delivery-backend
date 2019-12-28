@@ -1,8 +1,3 @@
-/**
- * We receive the dbmigrate dependency from dbmigrate initially.
- * This enables us to not have to rely on NODE_PATH.
- */
-
 exports.up = function(db) {
   return db.createTable("pizzas", {
     id: { type: "int", primaryKey: true },
