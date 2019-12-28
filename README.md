@@ -35,6 +35,31 @@ You might need to install 'db-migrate' command globally.
 
 Migrations folder and file will create automatically!
 
+7: Create table using the migration file.
+Modified the function in migration file like below.
+
+``` exports.up = function(db) {
+  return db.createTable("pizzas", {
+    id: { type: "int", primaryKey: true },
+    name: "string",
+    price: "int",
+    image: "string",
+    created_at: {
+      type: "timestamp",
+      notNull: true,
+      defaultValue: new String("CURRENT_TIMESTAMP"),
+    },
+    updated_at: {
+      type: "timestamp",
+      notNull: true,
+      defaultValue: new String("CURRENT_TIMESTAMP"),
+    },
+  });
+};
+```
+
+Then, run this command in your terminal.
+``` db-migrate up ```
 
 
 
