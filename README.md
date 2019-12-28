@@ -1,5 +1,8 @@
 ## This repository is for a practicing making server using Node.js and Express.js
 
+## Technoligy
+JavaScript, Express.js, Node.js, PostgreSQL
+
 
 ## What is Express?
 
@@ -19,6 +22,7 @@
 
 
 ## Express Architecture
+
 ```
 project/
   controllers/
