@@ -86,9 +86,7 @@ Then run
 ``` db-migrate up ```
 
 
-
-
-## Express Architecture
+## File Architecture
 
 ```
 project/
@@ -108,7 +106,6 @@ project/
   .prettirerc
 ```
 
-
 ## HTTP Request
 
 ```
@@ -121,3 +118,28 @@ PATCH /pizzas/:id
 
 DELETE /pizzas/:id
 ```
+
+
+## FYI: MVC (Model, View, Controller) model
+Model takes on a roll for processing parts.
+e.g) Login process, Grabbing a lists of products from database, Culculating the total amout of price
+
+View takes on a roll for showing something in browsers.
+It doesn't do anything related to mofdifying data, info, and so on. 
+
+Controller takes user inputs from View. Pass that over to the Model. Grab the contents from Model, then choose the proper view depends on Models info.
+
+
+#### flow
+
+1: A web browser sends a HTTP request to Web application.
+2: Controller receive the request.
+3: Controller look into the request and takes parameters.
+4: Controller calls Model and passes over those parameters.
+5: Model starts processing and passed back status of the processing(whether it is succeeded or not) to Controller
+6: Controller chooses the proper View depends on the Model's response
+7: View goes to the Model and grabs the info to show, then passes that as HTML to the web browser as HTTP response.
+
+
+
+
