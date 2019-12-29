@@ -94,6 +94,9 @@ Create .sql file. Write query. Run this command in your terminal.
 ``` psql -d <your database name> -f <path of your .sql file (my case => seeder/seeding.sql) >```
 
 
+
+
+
 ## File Architecture
 
 ```
