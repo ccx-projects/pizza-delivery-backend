@@ -15,19 +15,21 @@ JavaScript, Express.js, Node.js, PostgreSQL
 
 2: ```yarn init```  to create package.json
 
-3: Add .gitignore file. I used an extension.
+3: Add .gitignore file. I used an extension below.
 
 <img width="583" alt="Screen Shot 2019-12-27 at 18 09 29" src="https://user-images.githubusercontent.com/45124890/71510991-16dd4880-28d4-11ea-97f9-cc080072727b.png">
 
-4: Create database.json for using migration manually.
+4: Create database.json for using db-migrate
+You might want to install 'db-migrate' command globally.
+
+```yarn global add db-migrate```
+
+[documentations](https://db-migrate.readthedocs.io/en/v0.10.x/)
    
+
 5: Create database.
  
  ```db-migrate db:create <your database name> -e dev```
-
-You might need to install 'db-migrate' command globally.
-
-```yarn global add db-migrate```
 
 
 6: Create migration file.
@@ -35,15 +37,16 @@ You might need to install 'db-migrate' command globally.
 
 Migrations folder and file will create automatically!
 
-7: Create table using the migration file.
+7: Create table modifying the migration file.
 Modified the createTable method in migration file like below.
 
-``` exports.up = function(db) {
+``` 
+exports.up = function(db) {
   return db.createTable("pizzas", {
-    id: { type: "int", primaryKey: true },
-    name: "string",
-    price: "int",
-    image: "string",
+    id: { type: "int", primaryKey: true, autoIncrement: true, notNull: true },
+    name: { type: "string", defaultValue: "", notNull: true, length: 50 },
+    price: { type: "int", defaultValue: 0, notNull: true },
+    image: { type: "string", defaultValue: "", notNull: true, length: 100 },
     created_at: {
       type: "timestamp",
       notNull: true,
@@ -85,14 +88,16 @@ Then run
 ``` db-migrate up ```
 
 
+8: Data seeding
+In PostgrSQL, 
 
-
-## Express Architecture
+## File Architecture
 
 ```
 project/
   controllers/
     index.js
+  migrations/  <= automatically added
   models/
     index.js
   routes/
@@ -107,7 +112,6 @@ project/
   .prettirerc
 ```
 
-
 ## HTTP Request
 
 ```
@@ -120,3 +124,28 @@ PATCH /pizzas/:id
 
 DELETE /pizzas/:id
 ```
+
+
+## FYI: MVC (Model, View, Controller) model
+Model takes on a roll for processing parts.
+e.g) Login process, Grabbing a lists of products from database, Culculating the total amout of price
+
+View takes on a roll for showing something in browsers.
+It doesn't do anything related to mofdifying data, info, and so on. 
+
+Controller takes user inputs from View. Pass that over to the Model. Grab the contents from Model, then choose the proper view depends on Models info.
+
+
+#### flow
+
+1: A web browser sends a HTTP request to Web application.
+2: Controller receive the request.
+3: Controller look into the request and takes parameters.
+4: Controller calls Model and passes over those parameters.
+5: Model starts processing and passed back status of the processing(whether it is succeeded or not) to Controller
+6: Controller chooses the proper View depends on the Model's response
+7: View goes to the Model and grabs the info to show, then passes that as HTML to the web browser as HTTP response.
+
+
+
+
