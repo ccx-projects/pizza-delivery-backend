@@ -89,13 +89,7 @@ Then run
 
 
 8: Data seeding
-Create a solder named "seeder".
-Then run this command in your terminal.
-
-``` db-migrate create <your migration name: what ever you like> -m ./seeder ```
-
-A seeder file will show up in your seeder folder!
-down
+In PostgrSQL, 
 
 ## File Architecture
 
@@ -109,7 +103,6 @@ project/
   routes/
     index.js
     router.js
-  seeder/
   tests/git a
     spec.js
   .gitignore
