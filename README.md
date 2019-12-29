@@ -29,6 +29,8 @@ You might need to install 'db-migrate' command globally.
 
 ```yarn global add db-migrate```
 
+[documentations](https://db-migrate.readthedocs.io/en/v0.10.x/)
+
 
 6: Create migration file.
 ``` db-migrate creat <your table name>```
