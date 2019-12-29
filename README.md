@@ -15,21 +15,21 @@ JavaScript, Express.js, Node.js, PostgreSQL
 
 2: ```yarn init```  to create package.json
 
-3: Add .gitignore file. I used an extension.
+3: Add .gitignore file. I used an extension below.
 
 <img width="583" alt="Screen Shot 2019-12-27 at 18 09 29" src="https://user-images.githubusercontent.com/45124890/71510991-16dd4880-28d4-11ea-97f9-cc080072727b.png">
 
-4: Create database.json for using migration manually.
-   
-5: Create database.
- 
- ```db-migrate db:create <your database name> -e dev```
-
-You might need to install 'db-migrate' command globally.
+4: Create database.json for using db-migrate
+You might want to install 'db-migrate' command globally.
 
 ```yarn global add db-migrate```
 
 [documentations](https://db-migrate.readthedocs.io/en/v0.10.x/)
+   
+
+5: Create database.
+ 
+ ```db-migrate db:create <your database name> -e dev```
 
 
 6: Create migration file.
@@ -37,7 +37,7 @@ You might need to install 'db-migrate' command globally.
 
 Migrations folder and file will create automatically!
 
-7: Create table using the migration file.
+7: Create table modifying the migration file.
 Modified the createTable method in migration file like below.
 
 ``` 
@@ -88,17 +88,28 @@ Then run
 ``` db-migrate up ```
 
 
+8: Data seeding
+Create a solder named "seeder".
+Then run this command in your terminal.
+
+``` db-migrate create <your migration name: what ever you like> -m ./seeder ```
+
+A seeder file will show up in your seeder folder!
+
+
 ## File Architecture
 
 ```
 project/
   controllers/
     index.js
+  migrations/  <= automatically added
   models/
     index.js
   routes/
     index.js
     router.js
+  seeder/
   tests/git a
     spec.js
   .gitignore
