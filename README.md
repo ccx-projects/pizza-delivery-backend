@@ -43,10 +43,10 @@ Modified the createTable method in migration file like below.
 ``` 
 exports.up = function(db) {
   return db.createTable("pizzas", {
-    id: { type: "int", primaryKey: true },
-    name: "string",
-    price: "int",
-    image: "string",
+    id: { type: "int", primaryKey: true, autoIncrement: true, notNull: true },
+    name: { type: "string", defaultValue: "", notNull: true, length: 50 },
+    price: { type: "int", defaultValue: 0, notNull: true },
+    image: { type: "string", defaultValue: "", notNull: true, length: 100 },
     created_at: {
       type: "timestamp",
       notNull: true,
@@ -95,7 +95,7 @@ Then run this command in your terminal.
 ``` db-migrate create <your migration name: what ever you like> -m ./seeder ```
 
 A seeder file will show up in your seeder folder!
-
+down
 
 ## File Architecture
 

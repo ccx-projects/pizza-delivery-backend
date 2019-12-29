@@ -1,21 +1,16 @@
-'use strict';
-
-var dbm;
-var type;
-var seed;
-
-/**
-  * We receive the dbmigrate dependency from dbmigrate initially.
-  * This enables us to not have to rely on NODE_PATH.
-  */
-exports.setup = function(options, seedLink) {
-  dbm = options.dbmigrate;
-  type = dbm.dataType;
-  seed = seedLink;
-};
-
 exports.up = function(db) {
-  return null;
+  return db.insert("pizza", [
+    { name: "Margherita", price: 1500, image: "" },
+    { name: "Margherita", price: 1200, image: "" },
+    { name: "Margherita", price: 1800, image: "" },
+    { name: "Margherita", price: 1200, image: "" },
+    { name: "Margherita", price: 1500, image: "" },
+    { name: "Margherita", price: 1500, image: "" },
+    { name: "Margherita", price: 1500, image: "" },
+    { name: "Margherita", price: 1500, image: "" },
+    { name: "Margherita", price: 1500, image: "" },
+    { name: "Margherita", price: 1500, image: "" },
+  ]);
 };
 
 exports.down = function(db) {
@@ -23,5 +18,5 @@ exports.down = function(db) {
 };
 
 exports._meta = {
-  "version": 1
+  version: 1,
 };
