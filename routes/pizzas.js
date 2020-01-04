@@ -2,25 +2,13 @@ const express = require("express");
 const router = express.Router();
 
 const pgp = require("pg-promise")(/* options */);
-// const pgp = require("../app");
-const db = pgp("postgres://nao@host:5432/pizza_delivery");
+const db = pgp("postgres://nao:@localhost:5432/pizza_delivery");
 
-db.one("SELECT $1 AS value", 123)
-  .then(function(data) {
-    console.log("DATA:", data.value);
-  })
-  .catch(function(error) {
-    console.log("ERROR:", error);
-  });
-
-const pizzaData = router.get("/pizzas", (req, res) => {
+router.get("/", async (req, res) => {
+  const menu = await db.any("SELECT * FROM pizzas");
   res.status(200);
-  res.json(pizzaData);
+  // res.send("pizzas");
+  res.send(menu);
 });
-
-// router.get("/", (req, res) => {
-//   res.send("Margerita!");
-//   // res.render("index", { title: "Express" });
-// });
 
 module.exports = router;
