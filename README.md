@@ -95,7 +95,14 @@ Create .sql file. Write query. Run this command in your terminal.
 
 
 9:Crete URI
-Use 
+Use ```express generator ``` .
+In app.js, set proper js file in router folder.
+
+```
+const pizzasRouter = require("./routes/pizzas");
+~
+const pizzasRouter = require("./routes/pizzas");
+```
 
 
 
