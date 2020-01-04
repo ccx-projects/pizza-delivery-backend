@@ -104,6 +104,9 @@ const pizzasRouter = require("./routes/pizzas");
 const pizzasRouter = require("./routes/pizzas");
 ```
 
+10: Connect to Database using ```pg-promise```
+(documentation)[https://expressjs.com/en/guide/database-integration.html#postgresql]
+
 
 
 
