@@ -89,7 +89,29 @@ Then run
 
 
 8: Data seeding
-In PostgrSQL, 
+Create .sql file. Write query. Run this command in your terminal.
+
+``` psql -d <your database name> -f <path of your .sql file (my case => seeder/seeding.sql) >```
+
+
+9:Crete URI
+Use ```express generator ``` .
+In app.js, set proper js file in router folder.
+
+```
+const pizzasRouter = require("./routes/pizzas");
+~
+const pizzasRouter = require("./routes/pizzas");
+```
+
+10: Connect to Database using ```pg-promise```
+[documentation](https://expressjs.com/en/guide/database-integration.html#postgresql)
+
+You should see the data from database in insomnia.
+
+
+11: 
+
 
 ## File Architecture
 
@@ -103,6 +125,8 @@ project/
   routes/
     index.js
     router.js
+  seeder/
+    .seeding.sql
   tests/git a
     spec.js
   .gitignore
@@ -136,7 +160,7 @@ It doesn't do anything related to mofdifying data, info, and so on.
 Controller takes user inputs from View. Pass that over to the Model. Grab the contents from Model, then choose the proper view depends on Models info.
 
 
-#### flow
+#### Flow
 
 1: A web browser sends a HTTP request to Web application.
 2: Controller receive the request.

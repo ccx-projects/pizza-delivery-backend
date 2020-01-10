@@ -21,14 +21,18 @@
     "pretty-quick": "^2.0.1"
   },
   "dependencies": {
+    "cookie-parser": "^1.4.4",
     "db-migrate": "^0.11.6",
     "db-migrate-pg": "^1.0.0",
+    "debug": "^4.1.1",
     "express": "^4.17.1",
-    "pg": "^7.16.0"
+    "morgan": "^1.9.1",
+    "pg": "^7.16.0",
+    "pg-promise": "^10.3.2"
   },
   "scripts": {
-    "start": "node ./app.js",
-    "dev": "nodemon ./app.js",
+    "start": "node ./bin/www",
+    "dev": "nodemon ./bin/www",
     "lint": "eslint --fix --ext .js .",
     "test": "mocha test && yarn lint"
   }
