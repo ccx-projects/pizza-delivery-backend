@@ -110,8 +110,6 @@ const pizzasRouter = require("./routes/pizzas");
 You should see the data from database in insomnia.
 
 
-11: 
-
 
 ## File Architecture
 
