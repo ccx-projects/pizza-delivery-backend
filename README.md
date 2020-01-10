@@ -117,23 +117,28 @@ You should see the data from database in insomnia.
 
 ```
 project/
-  controllers/
-    index.js
-  migrations/  <= automatically added
-  models/
-    index.js
-  routes/
-    index.js
-    router.js
-  seeder/
-    .seeding.sql
-  tests/git a
-    spec.js
-  .gitignore
-  app.js
-  package.json
-  .eslintrc
-  .prettirerc
+  -bin/
+    -www
+  -controllers/
+    -pizzaControllers.js
+  -migrations/  <= automatically added
+  -models/
+    -pizzas.js
+  -routes/
+    -pizzas.js
+  -seeder/
+    -seeding.sql
+  -tests/
+    -spec.js
+  -.gitignore
+  -app.js
+  -package.json
+  -.eslintrc
+  -.prettirerc
+  -README.md
+  -database.json
+  -yarn.lock
+  -yarn-error.log
 ```
 
 ## HTTP Request
