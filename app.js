@@ -3,7 +3,6 @@ const path = require("path");
 const cookieParser = require("cookie-parser");
 const logger = require("morgan");
 
-const indexRouter = require("./routes/index");
 const pizzasRouter = require("./routes/pizzas");
 
 const app = express();
@@ -14,7 +13,6 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, "public")));
 
-app.use("/", indexRouter);
 app.use("/pizzas", pizzasRouter);
 
 module.exports = app;
